@@ -7,7 +7,16 @@
 	<title>Davie's Burger</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+
+<body class="blue">
+	<div class="theme-switcher">
+		<select class="theme-select" aria-label="Select color theme">
+			<option value="blue" selected>Blue</option>
+			<option value="pink">Pink</option>
+			<option value="green">Green</option>
+			<option value="dark">Dark</option>
+		</select>
+	</div>
 	<nav>
 		<img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg" alt="Davie's Burger logo">
 		<span>Menu</span>
@@ -34,6 +43,13 @@
 			<li><strong>Protein</strong> 34g</li>
 		</ul>
 	</div>
+	<script>
+		const themeSelect = document.querySelector('.theme-select');
+
+		themeSelect.addEventListener('change', () => {
+			document.body.className = themeSelect.value;
+		});
+	</script>
 </body>
 </html>
 

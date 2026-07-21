@@ -2,191 +2,282 @@
   box-sizing: border-box;
 }
 
+:root {
+  --page-bg: #ffffff;
+  --page-bg-image: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_foodlogo.png");
+  --text-color: #333333;
+  --nav-text: #666666;
+  --accent: #05A8AA;
+  --accent-contrast: #ffffff;
+  --button-border: blue;
+  --button-text: #05A8AA;
+  --button-hover: #05A8AA;
+  --button-hover-border: #05A8AA;
+  --header-bg: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_burgerphoto.jpeg");
+}
+
+body.blue {
+  --accent: #05A8AA;
+  --button-text: #05A8AA;
+  --button-border: blue;
+  --button-hover: #05A8AA;
+  --button-hover-border: #05A8AA;
+}
+
+body.pink {
+  --accent: #d94f8f;
+  --button-text: #d94f8f;
+  --button-border: #d94f8f;
+  --button-hover: #d94f8f;
+  --button-hover-border: #d94f8f;
+}
+
+body.green {
+  --accent: #2f9d57;
+  --button-text: #2f9d57;
+  --button-border: #2f9d57;
+  --button-hover: #2f9d57;
+  --button-hover-border: #2f9d57;
+}
+
+body.dark {
+  --page-bg: #111111;
+  --page-bg-image: none;
+  --text-color: #f4f4f4;
+  --nav-text: #f4f4f4;
+  --accent: #0c6f73;
+  --accent-contrast: #ffffff;
+  --button-border: #7ec8ff;
+  --button-text: #ffffff;
+  --button-hover: #0c6f73;
+  --button-hover-border: #0c6f73;
+}
+
 body {
-    background-image: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_foodlogo.png");
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-  }
-  a {
-    text-decoration: none;
+  background-color: var(--page-bg);
+  background-image: var(--page-bg-image);
+  text-align: center;
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.theme-switcher {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+}
+
+.theme-select {
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+body.dark .theme-select {
+  background-color: #f4f4f4;
+  color: #111111;
+  border: 1px solid var(--accent);
+}
+
+nav {
+  text-align: center;
+}
+
+nav img {
+  width: 180px;
+  margin: 0 auto;
+  display: block;
+}
+
+nav span {
+  margin: 10px 0;
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: var(--nav-text);
+}
+
+.content {
+  width: 100%;
+  height: 500px;
+  margin: 10px auto;
+  overflow: scroll;
+}
+
+.header {
+  background-image: var(--header-bg);
+  background-position: center;
+  background-size: cover;
+  height: 320px;
+}
+
+.header h1 {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 40px;
+  width: 68%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.content .body {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.body p {
+  color: var(--text-color);
+  font-weight: 100;
+  line-height: 34px;
+  width: 90%;
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  border-radius: 4px;
+  color: var(--button-text);
+  display: block;
+  font-weight: 700;
+  width: 200px;
+  padding: 20px;
+  margin: 40px auto;
+  border: 1px solid var(--button-border);
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+  border: 1px solid var(--button-hover-border);
+  color: #FFF;
+}
+
+ul.nutrition {
+  padding: 20px;
+}
+
+ul.nutrition li {
+  display: inline-block;
+  background-color: var(--accent);
+  list-style: none;
+  width: 200px;
+  padding: 10px 20px;
+  margin-bottom: 3px;
+  color: white;
+}
+
+.nutrition .category {
+  color: var(--accent-contrast);
+  font-weight: 100;
+  letter-spacing: 2px;
+  display: block;
+}
+
+.nutrition .value {
+  color: var(--accent-contrast);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .theme-switcher {
+    top: 10px;
+    right: 10px;
   }
 
-  nav {
-    text-align: center;
-  
+  .theme-select {
+    padding: 9px 12px;
+    font-size: 14px;
   }
-  
-  nav img {
-      width: 180px;
-      margin: 0 auto;
-    display: block;
-  }
-  nav span {
-      margin: 10px 0;
-    display: block;
+
+  body {
     font-size: 16px;
-    font-weight: 100;
-    letter-spacing: 2px;
-  }
-  
-  nav a {
-    color: #666666;
-  }
-  .content {
-    width: 100%;
-    height: 500px;
-    margin: 10px auto;
-    overflow: scroll;
-  }
-  .header {
-    background-image: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_burgerphoto.jpeg");
-    background-position: center;
     background-size: cover;
-    height: 320px;
+    background-position: center top;
   }
-  
+
+  nav img {
+    width: 140px;
+  }
+
+  nav span {
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .content {
+    height: auto;
+    margin: 8px auto;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .header {
+    height: 240px;
+  }
+
   .header h1 {
-    background-color: #05A8AA;
-    color: #FFF;
-    font-family: 'Oswald', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-    line-height: 40px;
-    width: 68%;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  
-
-  
-  .content .body {
     width: 90%;
-    margin: 0 auto;
-  }
-  
-  .body p {
-    color: #333333;
-    font-weight: 100;
+    font-size: 30px;
     line-height: 34px;
-    width: 90%;
-    margin-top: 18px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  
-  .button {
-    border-radius: 4px;
-    color: #05A8AA;
-    display: block;
-    font-weight: 700;
-    width: 200px;
-    padding: 20px;
-    margin: 40px auto;
-    border: 1px solid blue;
-  }
-  
-  .button:hover {
-    background-color: #05A8AA;
-    border: 1px solid #05A8AA;
-    color: #FFF;
+    padding: 16px;
   }
 
-  
+  .content .body {
+    width: 100%;
+  }
+
+  .body p {
+    width: 92%;
+    line-height: 28px;
+    margin-top: 14px;
+  }
+
+  .button {
+    width: 80%;
+    max-width: 260px;
+    padding: 16px 20px;
+    margin: 28px auto;
+  }
+
   ul.nutrition {
-    padding: 20px;
+    padding: 12px;
   }
 
   ul.nutrition li {
-    display: inline-block;
-    background-color: #05A8AA;
-    list-style: none;
-    width: 200px;
-    padding: 10px 20px;
-    margin-bottom: 3px;
-    color: white;
-  }
-  
-  .nutrition .category {
-    color: white;
-    font-weight: 100;
-    letter-spacing: 2px;
+    width: 100%;
+    max-width: 320px;
+    padding: 10px 16px;
+    margin: 0 auto 8px;
     display: block;
   }
-  
+
   .nutrition .value {
-    color: white;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: 22px;
   }
-
-  @media only screen and (max-width: 768px) {
-    body {
-      font-size: 16px;
-      background-size: cover;
-      background-position: center top;
-    }
-
-    nav img {
-      width: 140px;
-    }
-
-    nav span {
-      margin: 8px 0;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    .content {
-      height: auto;
-      margin: 8px auto;
-      overflow: visible;
-      width: 100%;
-    }
-
-    .header {
-      height: 240px;
-    }
-
-    .header h1 {
-      width: 90%;
-      font-size: 30px;
-      line-height: 34px;
-      padding: 16px;
-    }
-
-    .content .body {
-      width: 100%;
-    }
-
-    .body p {
-      width: 92%;
-      line-height: 28px;
-      margin-top: 14px;
-    }
-
-    .button {
-      width: 80%;
-      max-width: 260px;
-      padding: 16px 20px;
-      margin: 28px auto;
-    }
-
-    ul.nutrition {
-      padding: 12px;
-    }
-
-    ul.nutrition li {
-      width: 100%;
-      max-width: 320px;
-      padding: 10px 16px;
-      margin: 0 auto 8px;
-      display: block;
-    }
-
-    .nutrition .value {
-      font-size: 22px;
-    }
-  }
+}
