@@ -1,5 +1,3 @@
-/* Universal Styles */
-
 * {
   box-sizing: border-box;
 }
@@ -10,13 +8,10 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
   }
-  
   a {
     text-decoration: none;
   }
-  
-  /* Navigation */
-  
+
   nav {
     text-align: center;
   
@@ -27,7 +22,6 @@ body {
       margin: 0 auto;
     display: block;
   }
-  
   nav span {
       margin: 10px 0;
     display: block;
@@ -39,18 +33,12 @@ body {
   nav a {
     color: #666666;
   }
-  
-  /* Content Container */
-  
   .content {
     width: 100%;
     height: 500px;
     margin: 10px auto;
     overflow: scroll;
   }
-  
-  /* Content Header */
-  
   .header {
     background-image: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_burgerphoto.jpeg");
     background-position: center;
