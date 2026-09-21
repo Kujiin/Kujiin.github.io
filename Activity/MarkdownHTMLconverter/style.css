@@ -1,32 +1,41 @@
-* {
-     box-sizing: border-box;
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    padding: 48px 36px 28px;
+    color: #111;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
 }
- body {
-     font-family: Arial, sans-serif;
-     padding: 20px;
+main { max-width: 760px; margin: 0 auto; }
+h1 { margin: 0 0 22px; font-size: 32px; line-height: 1.15; }
+h2 { margin: 0 0 18px; font-size: 24px; line-height: 1.25; }
+#container { display: grid; gap: 22px; }
+#markdown-input, #html-output, #preview {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
 }
- #markdown-input {
-     width: 100%;
-     height: 100px;
+#markdown-input {
+    height: 100px;
+    resize: vertical;
+    border-color: #777;
+    background: #fff;
+    color: inherit;
+    font: 14px/1.5 Consolas, monospace;
 }
- #html-output, #preview {
-     height: 100px;
-     display: inline-block;
-     width: 100%;
-     border: 1px solid #ccc;
-     padding: 10px;
-     margin: auto;
-     white-space: pre-wrap;
-     background-color: #f9f9f9;
-}
- @media (min-width: 600px) {
-     #markdown-input, #html-output, #preview {
-         height: 200px;
-         margin: 0;
-    }
-     #container {
-         display: flex;
-         justify-content: space-evenly;
-         gap: 10px;
-    }
+#markdown-input:focus-visible { outline: 2px solid #356ac3; outline-offset: 2px; }
+#html-output, #preview { background: #f9f9f9; white-space: pre-wrap; }
+#html-output { font: 14px/1.5 Consolas, monospace; }
+#preview > :first-child { margin-top: 0; }
+#preview > :last-child { margin-bottom: 0; }
+#preview img { max-width: 100%; height: auto; }
+@media (max-width: 380px) {
+    body { padding: 28px 20px; }
+    h1 { font-size: 28px; }
 }
