@@ -1,4 +1,4 @@
-# MacrohonCyrus-github.io
+# Kujiin.github.io
 Web Development Activities
 
 ## Hello World!
